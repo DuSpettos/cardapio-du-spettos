@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Du Spettos Espetaria — Cardápio</title>
+  <meta name="description" content="Cardápio digital Du Spettos Espetaria. Espetos, petiscos, bebidas e contato." />
+  <style>
+    :root{
+      --bg:#140a06;
+      --panel:#24130c;
+      --panel2:#2b160d;
+      --txt:#f7efe8;
+      --muted:#d9c5b6;
+      --line:#3a2217;
+      --accent:#ffb04a;
+      --accent2:#ff6a00;
+      --ok:#22c55e;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--txt);
+      background:
+        radial-gradient(1200px 800px at 20% -10%, rgba(255,176,74,.15), transparent 60%),
+        radial-gradient(900px 700px at 110% 10%, rgba(255,106,0,.12), transparent 55%),
+        linear-gradient(180deg, #0f0705, var(--bg));
+    }
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:18px}
+    header{
+      border:1px solid var(--line);
+      background:
+        linear-gradient(180deg, rgba(255,176,74,.12), transparent 45%),
+        linear-gradient(135deg, rgba(255,106,0,.10), transparent 55%),
+        rgba(36,19,12,.90);
+      border-radius:18px;
+      padding:18px;
+    }
+    .top{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    h1{margin:0;font-size:28px;letter-spacing:.3px}
+    .sub{margin:4px 0 0 0;color:var(--muted);font-size:14px}
+    .btns{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:11px 14px;border-radius:12px;border:1px solid var(--line);
+      background:rgba(43,22,13,.75);text-decoration:none;font-weight:700;
+      transition:.15s transform ease,.15s background ease;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(59,34,23,.85)}
+    .btn.whats{border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.12)}
+    .btn.whats:hover{background:rgba(34,197,94,.18)}
+    .btn.ig{border-color:rgba(255,176,74,.35);background:rgba(255,176,74,.12)}
+    .btn.ig:hover{background:rgba(255,176,74,.18)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+    .chip{
+      font-size:12px;color:var(--muted);
+      padding:7px 10px;border:1px solid var(--line);
+      border-radius:999px;background:rgba(36,19,12,.65);
+    }
+
+    .grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:14px}
+    @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+
+    .card{
+      border:1px solid var(--line);
+      background:rgba(36,19,12,.86);
+      border-radius:16px;
+      padding:14px;
+    }
+    .card h2{
+      margin:0 0 10px 0;font-size:18px;letter-spacing:.2px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .tag{
+      font-size:12px;padding:4px 8px;border-radius:999px;
+      border:1px solid rgba(255,176,74,.25);
+      background:rgba(255,176,74,.10);color:var(--muted);
+    }
+    .section{
+      margin:14px 0 8px 0;color:var(--accent);font-weight:900;
+      letter-spacing:.2px;font-size:13px;text-transform:uppercase;
+    }
+    .list{display:flex;flex-direction:column;gap:8px}
+    .row{
+      display:grid;grid-template-columns:1fr auto;gap:12px;
+      padding:10px 10px;border-radius:12px;
+      border:1px solid rgba(59,34,23,.65);
+      background:rgba(43,22,13,.55);
+    }
+    .name{font-weight:650}
+    .price{font-weight:900}
+    .desc{grid-column:1/-1;color:var(--muted);font-size:12px;margin-top:-4px}
+    .note{
+      margin-top:10px;font-size:12px;color:var(--muted);
+      border-top:1px solid var(--line);padding-top:10px;
+    }
+    footer{margin:18px 0 8px 0;color:var(--muted);font-size:12px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="top">
+        <div>
+          <h1>🍢 Du Spettos Espetaria</h1>
+          <p class="sub">Cardápio Digital • Planalto Caucaia</p>
+        </div>
+        <div class="btns">
+          <a class="btn whats" href="https://wa.me/5585985009749" target="_blank" rel="noopener">📲 WhatsApp</a>
+          <a class="btn ig" href="https://instagram.com/duespetos2" target="_blank" rel="noopener">📸 Instagram</a>
+          <a class="btn" href="#cardapio">📋 Ver Cardápio</a>
+        </div>
+      </div>
+      <div class="chips">
+        <span class="chip">📍 Av. Contorno Norte, 139 – Planalto Caucaia</span>
+        <span class="chip">💳 Visa • Mastercard • Elo • Hipercard • AmEx</span>
+      </div>
+    </header>
+
+    <main id="cardapio" class="grid">
+      <section class="card">
+        <h2>🔥 Espetos <span class="tag">Mais pedidos</span></h2>
+
+        <div class="section">Bovinos</div>
+        <div class="list">
+          <div class="row"><div class="name">Lombinho Bovino</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Lombinho Bovino com Calabresa</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Carne c/ Bacon (Medalhão)</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Carne com Bacon</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Coração Bovino</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Carne de Sol</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Maminha de Alcatra</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Cupim Bovino</div><div class="price">R$ 7,00</div></div>
+        </div>
+
+        <div class="section">Frango</div>
+        <div class="list">
+          <div class="row"><div class="name">Filé de Peito</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Coxinha da Asa</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Asinha de Frango</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Coração de Frango</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Moela de Frango</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Frango com Bacon (Medalhão)</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Frango com Linguiça Mista</div><div class="price">R$ 7,00</div></div>
+        </div>
+
+        <div class="section">Suíno</div>
+        <div class="list">
+          <div class="row"><div class="name">Sobrepaleta Suína</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Linguiça Toscana</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Costela Suína</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Tripa Suína</div><div class="price">R$ 8,00</div></div>
+        </div>
+
+        <div class="section">Diversos</div>
+        <div class="list">
+          <div class="row"><div class="name">Queijo Coalho</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Ovo de Codorna com Bacon</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Pão de Alho</div><div class="price">R$ 6,00</div></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>🍟 Petiscos & Guarnições <span class="tag">Para compartilhar</span></h2>
+
+        <div class="section">Petiscos</div>
+        <div class="list">
+          <div class="row"><div class="name">Batata Frita (Porção)</div><div class="price">R$ 13,00</div></div>
+          <div class="row"><div class="name">Macaxeira Frita (Porção)</div><div class="price">R$ 15,00</div></div>
+          <div class="row"><div class="name">Camarão no Alho e Óleo (500 g)</div><div class="price">R$ 20,00</div></div>
+          <div class="row"><div class="name">Bolinha de Carne de Sol</div><div class="price">R$ 10,00</div></div>
+          <div class="row"><div class="name">Bolinha de Queijo</div><div class="price">R$ 10,00</div></div>
+          <div class="row"><div class="name">Mini Pastel de Carne de Sol</div><div class="price">R$ 20,00</div></div>
+          <div class="row"><div class="name">Mini Pastel de Carne de Sol c/ Queijo</div><div class="price">R$ 20,00</div></div>
+          <div class="row"><div class="name">Mini Pastel de Queijo</div><div class="price">R$ 20,00</div></div>
+        </div>
+
+        <div class="section">Guarnições</div>
+        <div class="list">
+          <div class="row"><div class="name">Baião Temperado (P)</div><div class="price">R$ 6,00</div></div>
+          <div class="row"><div class="name">Baião Temperado (G)</div><div class="price">R$ 10,00</div></div>
+          <div class="row"><div class="name">Arroz Branco (P)</div><div class="price">R$ 6,00</div></div>
+          <div class="row"><div class="name">Arroz Branco (G)</div><div class="price">R$ 10,00</div></div>
+        </div>
+
+        <div class="section">Prato da Casa</div>
+        <div class="list">
+          <div class="row">
+            <div class="name">Jantinha</div><div class="price">R$ 24,00</div>
+            <div class="desc">02 espetos, baião pequeno, batata, farofa e vinagrete</div>
+          </div>
+          <div class="row"><div class="name">Molho do Churrasqueiro (500 ml)</div><div class="price">R$ 30,00</div></div>
+        </div>
+
+        <div class="note">
+          <strong>💳 Formas de pagamento:</strong> Visa • Mastercard • Elo • Hipercard • American Express
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>🍺 Cervejas</h2>
+        <div class="list">
+          <div class="row"><div class="name">Skol Lata</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Skol 300 ml</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Skol 600 ml</div><div class="price">R$ 11,00</div></div>
+
+          <div class="row"><div class="name">Brahma Chopp 300 ml</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Brahma Duplo Malte 600 ml</div><div class="price">R$ 13,00</div></div>
+
+          <div class="row"><div class="name">Budweiser Lata</div><div class="price">R$ 6,00</div></div>
+          <div class="row"><div class="name">Budweiser Long Neck</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Budweiser 600 ml</div><div class="price">R$ 12,00</div></div>
+
+          <div class="row"><div class="name">Heineken Lata</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Heineken Long Neck</div><div class="price">R$ 9,00</div></div>
+          <div class="row"><div class="name">Heineken 600 ml</div><div class="price">R$ 16,00</div></div>
+
+          <div class="row"><div class="name">Corona Lata</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Corona Long Neck</div><div class="price">R$ 10,00</div></div>
+
+          <div class="row"><div class="name">Stella Artois Long Neck</div><div class="price">R$ 9,00</div></div>
+          <div class="row"><div class="name">Stella Artois 600 ml</div><div class="price">R$ 13,00</div></div>
+          <div class="row"><div class="name">Stella Gold Long Neck</div><div class="price">R$ 10,00</div></div>
+
+          <div class="row"><div class="name">Spaten Lata</div><div class="price">R$ 6,00</div></div>
+          <div class="row"><div class="name">Spaten Long Neck</div><div class="price">R$ 8,00</div></div>
+
+          <div class="row"><div class="name">Original 600 ml</div><div class="price">R$ 13,00</div></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>🥤 Bebidas, Destilados e Sucos</h2>
+
+        <div class="section">Bebidas</div>
+        <div class="list">
+          <div class="row"><div class="name">Red Bull</div><div class="price">R$ 12,00</div></div>
+          <div class="row"><div class="name">Coca-Cola Lata</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Coca-Cola Zero Lata</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Coca-Cola 1 L Retornável</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Coca-Cola Zero 1 L Retornável</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Coca-Cola Zero 1 L</div><div class="price">R$ 9,00</div></div>
+          <div class="row"><div class="name">São Geraldo Lata</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">São Geraldo 1 L</div><div class="price">R$ 9,00</div></div>
+          <div class="row"><div class="name">Guaraná Antarctica Lata</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Guaraná Antarctica 1 L</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Fanta Laranja Lata</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Fanta Uva Lata</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Sprite</div><div class="price">R$ 5,00</div></div>
+          <div class="row"><div class="name">Água Mineral</div><div class="price">R$ 2,00</div></div>
+          <div class="row"><div class="name">Água com Gás</div><div class="price">R$ 3,00</div></div>
+        </div>
+
+        <div class="section">Destilados (Dose)</div>
+        <div class="list">
+          <div class="row"><div class="name">Ice Cabaré</div><div class="price">R$ 10,00</div></div>
+          <div class="row"><div class="name">Smirnoff Ice</div><div class="price">R$ 12,00</div></div>
+          <div class="row"><div class="name">Ypióca Amarela ou Prata</div><div class="price">R$ 3,00</div></div>
+          <div class="row"><div class="name">Pingo de Ouro</div><div class="price">R$ 3,00</div></div>
+          <div class="row"><div class="name">Cachaça 51</div><div class="price">R$ 3,00</div></div>
+          <div class="row"><div class="name">Campari</div><div class="price">R$ 7,00</div></div>
+          <div class="row"><div class="name">Red Label</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Black &amp; White</div><div class="price">R$ 6,00</div></div>
+          <div class="row"><div class="name">Ballantine’s</div><div class="price">R$ 8,00</div></div>
+          <div class="row"><div class="name">Vodka Orloff</div><div class="price">R$ 4,00</div></div>
+          <div class="row"><div class="name">Vodka Smirnoff</div><div class="price">R$ 5,00</div></div>
+        </div>
+
+        <div class="section">Sucos (Copo / Jarra)</div>
+        <div class="list">
+          <div class="row"><div class="name">Maracujá</div><div class="price">R$ 6,00 / R$ 12,00</div></div>
+          <div class="row"><div class="name">Cajá</div><div class="price">R$ 5,00 / R$ 10,00</div></div>
+          <div class="row"><div class="name">Acerola</div><div class="price">R$ 5,00 / R$ 10,00</div></div>
+          <div class="row"><div class="name">Graviola</div><div class="price">R$ 5,00 / R$ 10,00</div></div>
+          <div class="row"><div class="name">Abacaxi</div><div class="price">R$ 5,00 / R$ 10,00</div></div>
+          <div class="row"><div class="name">Abacaxi com Hortelã</div><div class="price">R$ 6,00 / R$ 12,00</div></div>
+          <div class="row"><div class="name">Goiaba</div><div class="price">R$ 5,00 / R$ 10,00</div></div>
+        </div>
+
+        <div class="note">
+          <strong>📲 Contato:</strong> WhatsApp (85) 98500-9749 • Instagram @duespetos2
+        </div>
+      </section>
+    </main>
+
+    <footer>© Du Spettos Espetaria • Cardápio digital</footer>
+  </div>
+</body>
+</html>
