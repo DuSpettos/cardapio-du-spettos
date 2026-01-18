@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Du Spettos Espetaria — Cardápio</title>
   <meta name="description" content="Cardápio digital Du Spettos Espetaria. Espetos, petiscos, bebidas e contato." />
+
   <style>
     :root{
       --bg:#140a06;
@@ -26,6 +27,7 @@
         radial-gradient(1200px 800px at 20% -10%, rgba(255,176,74,.15), transparent 60%),
         radial-gradient(900px 700px at 110% 10%, rgba(255,106,0,.12), transparent 55%),
         linear-gradient(180deg, #0f0705, var(--bg));
+      padding-bottom: 76px; /* espaço pro rodapé fixo */
     }
     a{color:inherit}
     .wrap{max-width:980px;margin:0 auto;padding:18px}
@@ -97,71 +99,106 @@
       border-top:1px solid var(--line);padding-top:10px;
     }
     footer{margin:18px 0 8px 0;color:var(--muted);font-size:12px;text-align:center}
-    /* Rodapé fixo de patrocinador/parceiros */
-.barra-parceiros{
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 999;
-  border-top: 1px solid var(--line);
-  background: rgba(20,10,6,.92);
-  backdrop-filter: blur(8px);
-  padding: 10px 12px;
-}
 
-.barra-parceiros .inner{
-  max-width: 980px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: space-between;
-}
+    /* Card de patrocinador (logo grande) */
+    .patrocinador{
+      border:1px solid var(--line);
+      background:rgba(36,19,12,.86);
+      border-radius:16px;
+      padding:14px;
+      margin-top:14px;
+      text-align:center;
+    }
+    .patrocinador h2{
+      margin:0 0 10px 0;font-size:18px;letter-spacing:.2px;
+      display:flex;align-items:center;justify-content:center;gap:10px;
+    }
+    .logo-patrocinador{
+      width:220px;
+      max-width:100%;
+      height:auto;
+      border-radius:14px;
+      border:1px solid rgba(255,176,74,.22);
+      background:rgba(0,0,0,.25);
+      padding:8px;
+      filter: drop-shadow(0 0 10px rgba(255,106,0,.35));
+      transition: transform .2s ease;
+    }
+    .logo-patrocinador:hover{ transform: scale(1.04); }
+    .patrocinador .txt{
+      margin-top:10px;
+      font-size:12px;
+      color:var(--muted);
+    }
 
-.barra-parceiros .label{
-  font-size: 12px;
-  color: var(--muted);
-  white-space: nowrap;
-}
+    /* Rodapé fixo de parceiros */
+    .barra-parceiros{
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      border-top: 1px solid var(--line);
+      background: rgba(20,10,6,.92);
+      backdrop-filter: blur(8px);
+      padding: 10px 12px;
+    }
+    .barra-parceiros .inner{
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: space-between;
+    }
+    .barra-parceiros .label{
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .barra-parceiros .logos{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .barra-parceiros .logos::-webkit-scrollbar{ height: 6px; }
+    .barra-parceiros .logos::-webkit-scrollbar-thumb{
+      background: rgba(255,176,74,.25);
+      border-radius: 999px;
+    }
+    .logo-chip{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,176,74,.22);
+      background: rgba(43,22,13,.65);
+      border-radius: 999px;
+      padding: 6px 10px;
+      flex: 0 0 auto;
+      text-decoration:none;
+    }
+    .logo-chip img{
+      height: 34px;
+      width: auto;
+      display: block;
+    }
 
-.barra-parceiros .logos{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  overflow-x: auto;
-  padding-bottom: 2px;
-}
-
-.barra-parceiros .logos::-webkit-scrollbar{ height: 6px; }
-.barra-parceiros .logos::-webkit-scrollbar-thumb{
-  background: rgba(255,176,74,.25);
-  border-radius: 999px;
-}
-
-/* Logo “chip” clicável */
-.logo-chip{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255,176,74,.22);
-  background: rgba(43,22,13,.65);
-  border-radius: 999px;
-  padding: 6px 10px;
-  flex: 0 0 auto;
-}
-
-.logo-chip img{
-  height: 34px;
-  width: auto;
-  display: block;
-}
-
-/* Espaço extra no fim da página para não “esconder” conteúdo atrás do rodapé fixo */
-body{ padding-bottom: 76px; }
-
+    /* Ajuste para celular / leitura em QR Code */
+    @media (max-width: 520px){
+      .barra-parceiros{ padding: 8px 10px; }
+      .barra-parceiros .label{ font-size: 11px; }
+      .logo-chip{ padding: 6px 8px; }
+      .logo-chip img{ height: 28px; }
+      body{ padding-bottom: 70px; }
+    }
+    @media (min-width: 900px){
+      .logo-chip img{ height: 38px; }
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
@@ -181,21 +218,22 @@ body{ padding-bottom: 76px; }
         <span class="chip">💳 Visa • Mastercard • Elo • Hipercard • AmEx</span>
       </div>
     </header>
-    
+
+    <!-- Patrocinador (logo grande) -->
     <section class="patrocinador" id="patrocinador">
-  <h2>🤝 Patrocinador <span class="tag">Apoio</span></h2>
+      <h2>🤝 Patrocinador <span class="tag">Apoio</span></h2>
 
-  <a href="<a href="https://wa.me/5585921894184?text=Ol%C3%A1%2C%20vi%20o%20patroc%C3%ADnio%20no%20Du%20Spettos%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
-" target="_blank" rel="noopener">
-    <img
-      src="dragon-tv.png.jpeg"
-      alt="Patrocinador Dragon in TV"
-      class="logo-patrocinador"
-    />
-  </a>
+      <a href="https://wa.me/5585921894184?text=Ol%C3%A1%2C%20vi%20o%20patroc%C3%ADnio%20no%20Du%20Spettos%20e%20quero%20saber%20mais."
+         target="_blank" rel="noopener">
+        <img
+          src="img/dragon-tv.png"
+          alt="Patrocinador Dragon in TV"
+          class="logo-patrocinador"
+        />
+      </a>
 
-  <div class="txt">Clique para conhecer</div>
-</section>
+      <div class="txt">📲 Fale conosco no WhatsApp</div>
+    </section>
 
     <main id="cardapio" class="grid">
       <section class="card">
@@ -271,6 +309,7 @@ body{ padding-bottom: 76px; }
           </div>
           <div class="row"><div class="name">Molho do Churrasqueiro (500 ml)</div><div class="price">R$ 30,00</div></div>
         </div>
+      </section> <!-- FECHOU Petiscos corretamente -->
 
       <section class="card">
         <h2>🍺 Cervejas</h2>
@@ -355,8 +394,7 @@ body{ padding-bottom: 76px; }
         <div class="note">
           <strong>💳 Formas de pagamento:</strong> Visa • Mastercard • Elo • Hipercard • American Express
         </div>
-      </section>
-        
+
         <div class="note">
           <strong>📲 Contato:</strong> WhatsApp (85) 98500-9749 • Instagram @duespetos2
         </div>
@@ -365,36 +403,21 @@ body{ padding-bottom: 76px; }
 
     <footer>© Du Spettos Espetaria • Cardápio digital</footer>
   </div>
-  <div class="barra-parceiros" aria-label="Parceiros e Patrocinadores">
-  <div class="inner">
-    <div class="label">🤝 Parceiros:</div>
 
-    <div class="logos">
-      <!-- Parceiro 1: Dragon in TV (WhatsApp com mensagem automática) -->
-      <a class="logo-chip"
-         href="https://wa.me/5585921894184?text=Ol%C3%A1%2C%20vi%20o%20patroc%C3%ADnio%20no%20Du%20Spettos%20e%20quero%20saber%20mais."
-         target="_blank" rel="noopener"
-         title="Dragon in TV - WhatsApp">
-        <img src="img/dragon-tv.png" alt="Dragon in TV">
-        
-        @media (max-width: 520px){
-  .barra-parceiros{ padding: 8px 10px; }
-  .barra-parceiros .label{ font-size: 11px; }
-  .logo-chip{ padding: 6px 8px; }
-  .logo-chip img{ height: 28px; }
-  body{ padding-bottom: 70px; }
-      </a>
+  <!-- Barra fixa de Parceiros (rodapé) -->
+  <div class="barra-parceiros" aria-label="Parceiros e Patrocinadores">
+    <div class="inner">
+      <div class="label">🤝 Parceiros:</div>
+
+      <div class="logos">
+        <a class="logo-chip"
+           href="https://wa.me/5585921894184?text=Ol%C3%A1%2C%20vi%20o%20patroc%C3%ADnio%20no%20Du%20Spettos%20e%20quero%20saber%20mais."
+           target="_blank" rel="noopener"
+           title="Dragon in TV - WhatsApp">
+          <img src="img/dragon-tv.png" alt="Dragon in TV">
+        </a>
+      </div>
     </div>
   </div>
-</div>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
