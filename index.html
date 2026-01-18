@@ -97,6 +97,69 @@
       border-top:1px solid var(--line);padding-top:10px;
     }
     footer{margin:18px 0 8px 0;color:var(--muted);font-size:12px;text-align:center}
+    /* Rodapé fixo de patrocinador/parceiros */
+.barra-parceiros{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  border-top: 1px solid var(--line);
+  background: rgba(20,10,6,.92);
+  backdrop-filter: blur(8px);
+  padding: 10px 12px;
+}
+
+.barra-parceiros .inner{
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.barra-parceiros .label{
+  font-size: 12px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.barra-parceiros .logos{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.barra-parceiros .logos::-webkit-scrollbar{ height: 6px; }
+.barra-parceiros .logos::-webkit-scrollbar-thumb{
+  background: rgba(255,176,74,.25);
+  border-radius: 999px;
+}
+
+/* Logo “chip” clicável */
+.logo-chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,176,74,.22);
+  background: rgba(43,22,13,.65);
+  border-radius: 999px;
+  padding: 6px 10px;
+  flex: 0 0 auto;
+}
+
+.logo-chip img{
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+/* Espaço extra no fim da página para não “esconder” conteúdo atrás do rodapé fixo */
+body{ padding-bottom: 76px; }
+
   </style>
 </head>
 <body>
@@ -122,9 +185,10 @@
     <section class="patrocinador" id="patrocinador">
   <h2>🤝 Patrocinador <span class="tag">Apoio</span></h2>
 
-  <a href="https://instagram.com/dragonintv" target="_blank" rel="noopener">
+  <a href="<a href="https://wa.me/5585921894184?text=Ol%C3%A1%2C%20vi%20o%20patroc%C3%ADnio%20no%20Du%20Spettos%20e%20quero%20saber%20mais." target="_blank" rel="noopener">
+" target="_blank" rel="noopener">
     <img
-      src="img/dragon-tv.png"
+      src="dragon-tv.png.jpeg"
       alt="Patrocinador Dragon in TV"
       class="logo-patrocinador"
     />
@@ -301,8 +365,32 @@
 
     <footer>© Du Spettos Espetaria • Cardápio digital</footer>
   </div>
+  <div class="barra-parceiros" aria-label="Parceiros e Patrocinadores">
+  <div class="inner">
+    <div class="label">🤝 Parceiros:</div>
+
+    <div class="logos">
+      <!-- Parceiro 1: Dragon in TV (WhatsApp com mensagem automática) -->
+      <a class="logo-chip"
+         href="https://wa.me/5585921894184?text=Ol%C3%A1%2C%20vi%20o%20patroc%C3%ADnio%20no%20Du%20Spettos%20e%20quero%20saber%20mais."
+         target="_blank" rel="noopener"
+         title="Dragon in TV - WhatsApp">
+        <img src="img/dragon-tv.png" alt="Dragon in TV">
+        
+        @media (max-width: 520px){
+  .barra-parceiros{ padding: 8px 10px; }
+  .barra-parceiros .label{ font-size: 11px; }
+  .logo-chip{ padding: 6px 8px; }
+  .logo-chip img{ height: 28px; }
+  body{ padding-bottom: 70px; }
+      </a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
+
 
 
 
